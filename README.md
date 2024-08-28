@@ -1,5 +1,24 @@
 # Provider Statemanagement
 
+Provider is a state management package for Flutter that simplifies the way you manage and access state throughout your application. It provides a way to inject and consume objects (like state, services, or other dependencies) into the widget tree, making them accessible to the widgets that need them.
+
+## Core Concepts of Provider
+### 1. State:
+- State refers to the data that can change over time and affects the UI. For example, the count in a counter application or the items in a shopping cart.
+
+### 2. ChangeNotifier:
+- ChangeNotifier is a class that provides change notification to listeners. When the state changes, it notifies the listeners to rebuild with the updated state. You typically extend ChangeNotifier to create your own state classes.
+
+### 3. ChangeNotifierProvider:
+- ChangeNotifierProvider is a widget that provides an instance of a ChangeNotifier to its descendants. It listens to the ChangeNotifier and rebuilds the widget tree when the state changes.
+
+### 4. Consumer:
+- Consumer is a widget that listens to changes in the provided state and rebuilds itself when the state changes. It allows you to access the state and update the UI accordingly.
+
+### 5. Provider.of:
+Provider.of is a method used to access the provided state or objects directly. It is typically used inside widgets to get the current state.
+
+
 ## Integrating Provider
 To integrate Provider into your Flutter project, you need to wrap the MaterialApp with either Provider or MultiProvider. In this example, I’ve used MultiProvider to accommodate multiple providers, which is common in real-world scenarios where you often need more than one provider.
 
